@@ -37,10 +37,12 @@ services:
       - mysql-data:/var/lib/myssql/data
     environment:
       # NOTE: POSTGRES_DB/USER/PASSWORD should match values in app container
+        #MYSQL_ROOT_USER: root
         MYSQL_ROOT_PASSWORD: mysql
         MYSQL_PASSWORD: ecommerceapp
         MYSQL_USER: ecommerceapp
         MYSQL_DATABASE: mysql
+        #PORT_NUMBER: 3306
 
-    # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
+    # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MYSQL locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
